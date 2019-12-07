@@ -28,8 +28,6 @@ async function solver(puzzle) {
   }, 0)
   
   console.log({ sum2 }) // 5089160
-  
-
 }
 
 window.fetch('./puzzle').then(res => res.text()).then(solver)

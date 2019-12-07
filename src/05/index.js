@@ -4,8 +4,6 @@ async function solver(puzzle) {
   const MODE_POSITION = 0
   const MODE_IMMEDIATE = 1
 
-  const pointersOverwritten = []
-
   const aPuzzle = puzzle.split(',').map(n => Number(n))
 
   function getValue (value, mode, memory) {
@@ -56,14 +54,12 @@ async function solver(puzzle) {
       if (opcode === 1) {
         console.info('[ADD]', { pointer: param3, value: i1 + i2, inputs: { i1, i2 } })
         memory[param3] = i1 + i2
-        pointersOverwritten.push(param3)
         pointer += 4 // param0, 2 input, 1 output
       }
 
       if (opcode === 2) {
         console.info('[MULTIPLY]', { pointer: param3, value: i1 * i2, inputs: { i1, i2 } })
         memory[param3] = i1 * i2
-        pointersOverwritten.push(param3)
         pointer += 4 // param0, 2 input, 1 output
       }
 
@@ -124,7 +120,7 @@ async function solver(puzzle) {
 
   // part 1: 11933517
   // const systemId = 1
-  
+
   // part 2: 10428568
   const systemId = 5
 
