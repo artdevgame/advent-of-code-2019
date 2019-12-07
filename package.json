@@ -1,0 +1,15 @@
+{
+  "name": "2019-advent-of-code",
+  "version": "1.0.0",
+  "main": "src",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "fastify": "^2.10.0",
+    "fastify-static": "^2.5.1",
+    "nodemon": "^2.0.1"
+  },
+  "scripts": {
+    "start": "nodemon -w src server.js"
+  }
+}
